@@ -1,0 +1,171 @@
+// main: "../style.less"
+.timeline {
+    margin: 4.2rem auto;
+    max-width: 768px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    position: relative;
+
+    &:before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100%;
+
+        background-color: @black;
+
+        position: absolute;
+        top: 0;
+        left: 50%;
+        z-index: 1;
+    }
+    
+    @media @mobile {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    @media @mobile-sm {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.timeline__col {
+    width: 50%;
+
+    &--left {
+        padding-right: 3.2rem;
+        text-align: right;
+    
+        @media @mobile {
+            padding-right: 2rem;
+        }
+        
+    
+        @media @mobile-sm {
+            position: relative;
+
+            &:before {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 100%;
+        
+                background-color: @black;
+        
+                position: absolute;
+                top: 0;
+                right: 1rem;
+                z-index: 1;
+            }
+        }
+    }
+
+    &--right {
+        padding-left: 3.2rem;
+    
+        @media @mobile {
+            padding-left: 2rem;
+        }
+    
+        @media @mobile-sm {
+            position: relative;
+
+            &:before {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 100%;
+        
+                background-color: @black;
+        
+                position: absolute;
+                top: 0;
+                left: 1rem;
+                z-index: 1;
+            }
+        }
+    }
+    
+    @media @mobile-sm {
+        width: 100%;
+
+        & + .timeline__col {
+            margin-top: 1rem;
+        }
+    }
+}
+
+.timeline__title {
+    margin-bottom: 2.6rem;
+
+    font-size: 1.2rem;
+    color: @black;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @media @mobile {
+        margin-bottom: 1rem;
+    
+        font-size: 1.2rem;
+    }
+}
+
+.timeline__item {
+    margin-bottom: 2.6rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media @mobile {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.timeline__date {
+    display: block;
+    margin-bottom: 0.8rem;
+
+    text-decoration: underline;
+    font-size: 0.94rem;
+    color: @black;
+}
+
+.timeline__subtitle {
+    margin-bottom: 0.2rem;
+
+    font-size: 1.06rem;
+    color: @black;
+    font-weight: 700;
+
+    @media @mobile {
+        font-size: 0.8rem;
+    }
+}
+
+.timeline__position {
+    font-size: 0.94rem;
+    color: @black;
+    font-weight: 700;
+    font-style: italic;
+
+    @media @mobile {
+        font-size: 0.8rem;
+    }
+}
+
+.timeline__text {
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+    color: @gray;
+    font-weight: 300;
+    line-height: 1.5;
+}

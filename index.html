@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/JQuery.js"></script>
+    <title>Portfolio</title>
+</head>
+<body>
+
+    <!-- Sprite SVG -->
+    <svg style="display:none">
+        <symbol id="behance" viewBox="0 0 512 512">
+            <g>
+                <path d="M7,415.8C7,309.3,7,203.5,7,97c1.9,0,3.7,0,5.4,0c47.5,0,95,0,142.4,0c15.3,0,30.2,2,44.7,6.8   c31.5,10.5,51.2,36.3,52.1,69.5c0.3,9.4-0.4,19-2.2,28.3c-3.5,17.6-14,30.6-29.3,39.7c-1.7,1-3.4,2-5.5,3.3   c3.6,1.7,6.7,3.2,9.8,4.8c20.3,11,31.8,28.4,35.8,50.8c4.4,24.3,1.3,47.4-11.3,69c-14.6,25.1-36.6,39.6-65.2,43.6   c-12.7,1.8-25.5,2.8-38.3,2.9c-44,0.3-88,0.1-131.9,0.1C11.5,415.8,9.6,415.8,7,415.8z M78.8,359.8c26.7,0,52.9,0.5,79-0.2   c12.7-0.4,24.1-5.3,31.5-16.6c7.5-11.6,8.2-24.5,6.2-37.6c-1.6-10.5-7.1-19.1-17-23.2c-7.5-3.1-15.8-5.7-23.9-6   c-24.3-0.9-48.6-0.5-72.9-0.6c-0.9,0-1.9,0.4-2.8,0.6C78.8,304.2,78.8,332,78.8,359.8z M78.9,222.5c1.5,0.1,2.6,0.3,3.8,0.3   c21.5,0,42.9,0.3,64.4-0.2c7.4-0.2,14.9-1.7,22-3.8c9.9-3,17.6-9.3,19.5-20c1.2-6.8,1.4-13.9,0.5-20.7c-1.5-12-8.8-19.5-20.7-22   c-6.3-1.3-12.8-2.8-19.2-3c-21.8-0.6-43.6-0.5-65.4-0.9c-4.2-0.1-5.3,1.2-5.3,5.3c0.2,20,0.1,39.9,0.1,59.9   C78.6,219.1,78.8,220.7,78.9,222.5z"/><path d="M345.5,308.6c-0.3,32.6,18.4,54.1,48.6,56.3c14.1,1,27.8-0.4,38.9-10.6c3.9-3.6,6.7-8.2,10.1-12.2c1.1-1.2,2.7-2.9,4-2.9   c18.8-0.2,37.6-0.1,56.9-0.1c-0.7,9.1-4,16.8-8.4,24c-18.3,29.9-45.4,46-80,49.8c-22.6,2.5-44.6,0.1-65.6-9   c-36.1-15.5-57-42.5-62-81.7c-3.5-27.8-3-55.3,6.3-81.9c11.3-32.4,33.9-53.7,66.6-63.7c27.3-8.3,54.7-7.2,81.4,2.8   c33.2,12.5,51.4,38.2,60.5,71.3c4.9,17.7,4.6,35.9,4.7,54.1c0,3.8-2.1,3.8-4.8,3.8c-21.5,0-43,0-64.5,0c-28.8,0-57.7,0-86.5,0   C349.8,308.6,347.8,308.6,345.5,308.6z M446.4,268.8c-1.6-30.7-21.8-48.6-52.7-48c-31.5,0.6-45.3,26.8-46.7,48   C380,268.8,413.1,268.8,446.4,268.8z"/><path d="M333.8,142c0-10.4,0-20.6,0-31.2c41.7,0,83,0,124.8,0c0,10.4,0,20.7,0,31.2C416.9,142,375.5,142,333.8,142z"/>
+            </g>
+        </symbol>
+        <symbol id="dribble" viewBox="0 0 42 42">
+            <g transform="translate(-374.2178,-62.2364)">
+                <path d="M395.218,63.236c-11.046,0-20,8.954-20,20s8.954,20,20,20s20-8.954,20-20S406.264,63.236,395.218,63.236z M395.218,66.134
+                    c4.357,0,8.334,1.63,11.354,4.312c-2.219,2.927-5.59,4.876-8.968,6.195c-1.841-3.368-4.108-6.919-6.415-10.03
+                    C392.48,66.299,393.829,66.134,395.218,66.134z M387.942,67.755c2.229,3.335,4.389,6.428,6.363,9.929
+                    c-4.991,1.293-10.629,2.069-15.838,2.082C379.565,74.438,383.144,70.014,387.942,67.755z M408.469,72.424
+                    c2.386,2.919,3.823,6.642,3.851,10.699c-3.956-0.779-7.891-0.984-11.896-0.58c-0.451-1.123-0.996-2.189-1.519-3.34
+                    C402.358,77.81,406.05,75.426,408.469,72.424L408.469,72.424z M395.694,80.33c0.428,0.911,0.924,1.876,1.389,2.863
+                    c-5.57,2.456-11.494,5.738-14.57,11.492c-2.733-3.031-4.397-7.047-4.397-11.449c0-0.167,0.003-0.334,0.008-0.5
+                    C384.089,82.707,389.944,81.961,395.694,80.33z M412.262,84.66c-0.005,0.066-0.011,0.133-0.018,0.199
+                    C412.251,84.793,412.257,84.727,412.262,84.66z M404.731,84.993c2.486-0.008,5.055,0.339,7.376,0.95
+                    c-0.759,4.776-3.497,8.895-7.347,11.487c-0.918-4.175-1.793-8.17-3.34-12.198C402.487,85.073,403.601,84.996,404.731,84.993z
+                     M412.196,85.303c-0.012,0.098-0.023,0.194-0.037,0.291C412.173,85.496,412.185,85.4,412.196,85.303z M398.255,86.014
+                    c1.577,4.072,2.814,8.582,3.644,12.971c-2.053,0.872-4.31,1.354-6.681,1.354c-3.955,0-7.597-1.344-10.494-3.599
+                    C387.821,91.715,392.618,87.913,398.255,86.014z"/>
+            </g>
+        </symbol>
+        <symbol id="linkedin" viewBox="0 0 64 64">
+            <g><path d="M2,6v52c0,2.2,1.8,4,4,4h52c2.2,0,4-1.8,4-4V6c0-2.2-1.8-4-4-4H6C3.8,2,2,3.8,2,6z M19.1,52H12V24.4h7.1V52z    M15.6,18.9c-2,0-3.6-1.5-3.6-3.4c0-1.9,1.6-3.4,3.6-3.4c2,0,3.6,1.5,3.6,3.4C19.1,17.4,17.5,18.9,15.6,18.9z M52,52h-7.1V38.2   c0-2.9-0.1-4.8-0.4-5.7c-0.3-0.9-0.8-1.5-1.4-2c-0.7-0.5-1.5-0.7-2.4-0.7c-1.2,0-2.3,0.3-3.2,1c-1,0.7-1.6,1.6-2,2.7   c-0.4,1.1-0.5,3.2-0.5,6.2V52h-8.6V24.4h7.1v4.1c2.4-3.1,5.5-4.7,9.2-4.7c1.6,0,3.1,0.3,4.5,0.9c1.3,0.6,2.4,1.3,3.1,2.2   c0.7,0.9,1.2,1.9,1.4,3.1c0.3,1.1,0.4,2.8,0.4,4.9V52z"/>
+            </g>
+        </symbol>
+        <symbol id="facebook" viewBox="0 0 512 512">
+            <g>
+                <path d="M308.3,508.5c-2.5,0.1-4.1,0.3-5.7,0.3c-34.2,0-68.3-0.1-102.5,0.1c-4.8,0-6.1-1.3-6.1-6.1c0.1-79.6,0.1-159.3,0.1-238.9   c0-2.1,0-4.2,0-6.9c-18.6,0-36.7,0-55.1,0c0-28.4,0-56.3,0-85c1.9,0,3.7,0,5.4,0c15,0,30-0.1,45,0.1c3.8,0,4.8-1.1,4.8-4.8   c-0.2-22.3-0.2-44.7,0-67c0.1-15.6,2.6-30.8,9.8-44.9c10.3-19.9,26.6-32.8,47.2-40.8c16.8-6.6,34.5-9,52.3-9.3   c29-0.4,58-0.2,87-0.3c2.7,0,4.9-0.1,4.9,3.7c-0.1,27.5-0.1,55-0.1,82.5c0,0.3-0.1,0.6-0.5,1.9c-1.7,0-3.6,0-5.5,0   c-18,0-36-0.1-54,0c-10.4,0-18.8,4.2-24.1,13.3c-1.6,2.7-2.6,6.2-2.6,9.4c-0.3,17,0,34-0.2,51c0,4,1.2,5.1,5.1,5.1   c25-0.2,50-0.1,75-0.1c2,0,3.9,0,7.3,0c-3.5,28.6-6.9,56.6-10.4,84.9c-26,0-51.3,0-77.1,0C308.3,340.8,308.3,424.4,308.3,508.5z"/>
+            </g>
+        </symbol>
+        <symbol id="instagram" viewBox="0 0 512 512">
+            <g>
+                <path d="M505,257c0,34.8-0.7,69.7,0.2,104.5c1.5,61.6-37.2,109.2-86.5,130.4c-19.8,8.5-40.6,13-62.1,13c-67.3,0.1-134.7,1-202-0.3   c-50.7-1-92.4-22.2-122.3-64c-15.7-22-23.2-47-23.2-74.1c0-71.7,0-143.3,0-215c0-58.5,28.5-99.4,79.1-126C110.2,14,134.1,9.1,159,9   c65.3,0,130.7-0.4,196,0.2c50.7,0.4,93,19.8,124.2,60.6c17.4,22.8,25.8,49,25.8,77.8C505,184,505,220.5,505,257z M46,257   c0,36.7,0,73.3,0,110c0,16.4,3.8,31.8,12.3,45.7c22.3,36.5,56,54.3,97.8,55c67.1,1,134.3,0.4,201.5,0.2c16.5,0,32.5-3.4,47.4-10.5   c40.6-19.4,63.3-50.3,63.1-96.7c-0.4-71-0.1-142-0.1-213c0-20.1-5.7-38.5-17.6-54.7c-23-31.1-54.8-46.4-92.8-46.8   c-67-0.8-134-0.3-201-0.2c-14.3,0-28.1,2.9-41.5,7.9c-36.8,13.7-71,48.4-69.4,99.5C46.9,188,46,222.5,46,257z"/><path d="M257.6,363c-64.5,0-116.5-51.4-116.6-115.4c-0.1-63,52.3-114.6,116.4-114.6c64.3-0.1,116.5,51.4,116.6,114.9   C374,311.3,321.9,362.9,257.6,363z M257.6,326c43.9,0,79.5-35.1,79.4-78.3c-0.1-42.8-35.7-77.8-79.4-77.8   c-43.9,0-79.7,34.9-79.7,78C178,291.1,213.7,326.1,257.6,326z"/><path d="M387.5,98c13.5,0,24.5,11.5,24.5,25.6c-0.1,14.1-11.2,25.5-24.7,25.4c-13.3-0.1-24.2-11.5-24.2-25.3   C363,109.6,374,98,387.5,98z"/>
+            </g>
+        </symbol>
+        <symbol id="twitter" viewBox="0 0 128 128">
+            <g>
+                <path clip-rule="evenodd" d="M128,23.294    c-4.703,2.142-9.767,3.59-15.079,4.237c5.424-3.328,9.587-8.606,11.548-14.892c-5.079,3.082-10.691,5.324-16.687,6.526    c-4.778-5.231-11.608-8.498-19.166-8.498c-14.493,0-26.251,12.057-26.251,26.927c0,2.111,0.225,4.16,0.676,6.133    C41.217,42.601,21.871,31.892,8.91,15.582c-2.261,3.991-3.554,8.621-3.554,13.552c0,9.338,4.636,17.581,11.683,22.412    c-4.297-0.131-8.355-1.356-11.901-3.359v0.331c0,13.051,9.053,23.937,21.074,26.403c-2.201,0.632-4.523,0.948-6.92,0.948    c-1.69,0-3.343-0.162-4.944-0.478c3.343,10.694,13.035,18.483,24.53,18.691c-8.986,7.227-20.315,11.533-32.614,11.533    c-2.119,0-4.215-0.123-6.266-0.37c11.623,7.627,25.432,12.088,40.255,12.088c48.309,0,74.717-41.026,74.717-76.612    c0-1.171-0.023-2.342-0.068-3.49C120.036,33.433,124.491,28.695,128,23.294"/>
+            </g>
+        </symbol>
+        <symbol id="modal-close" viewBox="0 0 84 84">
+            <g>
+            <path d="M42,0C18.803,0,0,18.807,0,42c0,23.197,18.803,42,42,42c23.193,0,42-18.803,42-42
+                C84,18.807,65.193,0,42,0z M50.643,42l15.303,15.302l-8.643,8.642L42.002,50.643L26.699,65.944l-8.641-8.642L33.359,42
+                l-15.3-15.298l8.641-8.646L42,33.357l15.301-15.299l8.643,8.641L50.643,42z"/>
+        </g>
+        </symbol>
+    </svg>
+
+    <!-- header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__inner">
+
+                <div class="user">
+                    <div class="user__avatar">
+                        <img src="https://via.placeholder.com/57/333/fff" alt="">
+                    </div>
+                    <div class="user__content">
+                        <div class="user__name">
+                            Lewis<br>Nathaniel</div>
+                        <div class="user__prof">UI &amp; UX Designer</div>
+                    </div>
+                </div>
+
+                <nav class="nav" id="nav">
+                    <a class="nav__link" href="#" data-scroll="#works">Work</a>
+                    <a class="nav__link" href="#" data-scroll="#about">About me</a>
+                    <a class="nav__link" href="#" data-scroll="#news">Blog</a>
+                    <a class="nav__link" href="#" data-scroll="#intro">Contact</a>
+                    <a class="nav__link nav__link--btn" href="#" data-modal="#modal_hire_me">Hire me</a>
+                </nav>
+
+                <button class="burger" type="button" id="navToggle">
+                    <img class="burger__icon" src="img/icons/burger.svg">
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+<!-- Intro -->
+
+<section class="intro" id="intro">
+    <div class="container">
+
+        <div class="intro__inner">
+            <div class="intro__content">
+                <h2 class="intro__suptitle">Hello i'm</h2>
+                <h1 class="intro__title">Lewis Nathaniele</h1>
+                <div class="intro__text">UI &amp; UX Designer</div>
+
+                <div class="social">
+
+                    <a class="social__link" href="#" target="_blank">
+                        <img src="img/icons/Be.png" alt="">
+                    </a>
+
+                    <a class="social__link" href="#" target="_blank">
+                        <img src="img/icons/Dribbble.png" alt="">
+                    </a>
+
+                    <a class="social__link" href="#" target="_blank">
+                        <img src="img/icons/In.png" alt="">
+                    </a>
+                    
+
+                    <a class="social__link" href="#" target="_blank">
+                        <img src="img/icons/Fb.png" alt="">
+                    </a>
+
+                    <a class="social__link" href="#" target="_blank">
+                        <img src="img/icons/Instagram.png" alt="">
+                    </a>
+                    
+
+                    <a class="social__link" href="#" target="_blank">
+                        <img src="img/icons/Twitter.png" alt="">
+                    </a>          
+                    
+                </div>
+
+                <a class="btn" href="#" data-modal="#modal_hire_me">HIRE ME</a>
+                <button class="btn" type="button" data-modal="#modal_resume">SEE MY RESUME</button>
+
+            </div>
+            <img class="intro__photo" src="img/designer_photo.png" alt="">
+        </div><!-- /.intro__inner -->
+
+    </div><!-- /.container -->
+</section> <!-- /.intro -->
+
+
+<!-- Works -->
+
+<div class="works" id="works">
+    <div class="container">
+
+        <div class="works__nav">
+            <a href="#" class="works__nav-link" data-filter="all">All</a>
+            <a href="#" class="works__nav-link" data-filter="app">App</a>
+            <a href="#" class="works__nav-link" data-filter="website">Website</a>
+            <a href="#" class="works__nav-link" data-filter="interaction">Interaction</a>
+        </div>
+
+        <div class="portfolio">
+
+            <div class="portfolio__col" data-cat="app">
+
+                <div class="work" data-modal="#modal_project">
+                    <img class="work__img" src="https://via.placeholder.com/370x300" alt="">
+                    <div class="work__content">
+                        <div class="work__cat">Category: app</div>
+                        <div class="work__title">
+                            Project Title
+                            <time class="work__date" datetime="2022-08-22 09:40">2022</time>
+                        </div>
+                    </div>
+                </div><!-- /.work -->
+
+            </div>
+
+            <div class="portfolio__col" data-cat="website">
+
+                <div class="work" data-modal="#modal_project">
+                    <img class="work__img" src="https://via.placeholder.com/370x300" alt="">
+                    <div class="work__content">
+                        <div class="work__cat">Category: website</div>
+                        <div class="work__title">
+                            Project Title 
+                            <time class="work__date" datetime="2022-08-22 09:40">2022</time>
+                        </div>
+                    </div>
+                </div><!-- /.work -->
+
+            </div>
+
+            <div class="portfolio__col"  data-cat="interaction">
+
+                <div class="work" data-modal="#modal_project">
+                    <img class="work__img" src="https://via.placeholder.com/370x300" alt="">
+                    <div class="work__content">
+                        <div class="work__cat">Category: interaction</div>
+                        <div class="work__title">
+                            Project Title 
+                            <time class="work__date" datetime="2022-08-22 09:40">2022</time>
+                        </div>
+                    </div>
+                </div><!-- /.work -->
+
+            </div>
+
+
+            <div class="portfolio__col" data-cat="app">
+
+                <div class="work" data-modal="#modal_project">
+                    <img class="work__img" src="https://via.placeholder.com/370x300" alt="">
+                    <div class="work__content">
+                        <div class="work__cat">Category: app</div>
+                        <div class="work__title">
+                            Project Title
+                            <time class="work__date" datetime="2022-08-22 09:40">2022</time>
+                        </div>
+                    </div>
+                </div><!-- /.work -->
+
+            </div>
+
+            <div class="portfolio__col" data-cat="website">
+
+                <div class="work" data-modal="#modal_project">
+                    <img class="work__img" src="https://via.placeholder.com/370x300" alt="">
+                    <div class="work__content">
+                        <div class="work__cat">Category: website</div>
+                        <div class="work__title">
+                            Project Title 
+                            <time class="work__date" datetime="2022-08-22 09:40">2022</time>
+                        </div>
+                    </div>
+                </div><!-- /.work -->
+
+            </div>
+
+            <div class="portfolio__col"  data-cat="interaction">
+
+                <div class="work" data-modal="#modal_project">
+                    <img class="work__img" src="https://via.placeholder.com/370x300" alt="">
+                    <div class="work__content">
+                        <div class="work__cat">Category: interaction</div>
+                        <div class="work__title">
+                            Project Title 
+                            <time class="work__date" datetime="2022-08-22 09:40">2022</time>
+                        </div>
+                    </div>
+                </div><!-- /.work -->
+
+            </div>
+
+            <div class="portfolio__col" data-cat="app">
+
+                <div class="work" data-modal="#modal_project">
+                    <img class="work__img" src="https://via.placeholder.com/370x300" alt="">
+                    <div class="work__content">
+                        <div class="work__cat">Category: app</div>
+                        <div class="work__title">
+                            Project Title
+                            <time class="work__date" datetime="2022-08-22 09:40">2022</time>
+                        </div>
+                    </div>
+                </div><!-- /.work -->
+
+            </div>
+
+            <div class="portfolio__col" data-cat="website">
+
+                <div class="work" data-modal="#modal_project">
+                    <img class="work__img" src="https://via.placeholder.com/370x300" alt="">
+                    <div class="work__content">
+                        <div class="work__cat">Category: website</div>
+                        <div class="work__title">
+                            Project Title 
+                            <time class="work__date" datetime="2022-08-22 09:40">2022</time>
+                        </div>
+                    </div>
+                </div><!-- /.work -->
+
+            </div>
+
+            <div class="portfolio__col"  data-cat="interaction">
+
+                <div class="work" data-modal="#modal_project">
+                    <img class="work__img" src="https://via.placeholder.com/370x300" alt="">
+                    <div class="work__content">
+                        <div class="work__cat">Category: interaction</div>
+                        <div class="work__title">
+                            Project Title 
+                            <time class="work__date" datetime="2022-08-22 09:40">2022</time>
+                        </div>
+                    </div>
+                </div><!-- /.work -->
+
+            </div>
+
+        </div><!-- /.portfolio -->
+
+        <div class="text-center">
+            <a class="btn btn--sm" href="#">LOAD MORE WORK</a>
+        </div>
+
+    </div><!-- /.container -->
+</div><!-- /*works -->
+
+<!-- About -->
+<section class="about" id="about">
+    <div class="container">
+
+        <div class="about__inner">
+
+            <div class="about__photo">
+                <img class="img" src="img/about_photo.png" alt="">
+            </div>
+
+            <div class="about__content">
+                <h3 class="about__title">ABOUT ME</h3>
+                <h2 class="about__bigtitle">WHO AM I</h2>
+                <div class="about__text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat est consequat eu. Quisque aliquet a ipsum nec tincidunt. Nulla vitae rhoncus leo. Praesent dui sapien, bibendum quis tempus dictum, auctor ac dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at mauris porta, ullamcorper sem quis, lobortis sem.</p>
+                    <p>Donec sit amet aliquet dui, at varius est. Phasellus porttitor finibus neque vel vehicula. Duis in nulla egestas, dignissim elit at, imperdiet eros. Integer tristique posuere purus. Suspendisse placerat, quam vitae ullamcorper sollicitudin, dui ligula molestie massa, sit amet laoreet nibh ex vitae dui. Aenean laoreet pellentesque lacus, eget varius </p>
+                </div>
+
+                <a class="btn" href="#" data-modal="#modal_hire_me">HIRE ME</a>
+                <a class="btn" href="#" data-modal="#modal_resume">SEE MY RESUME</a>
+            </div><!-- /.about__content -->
+
+        </div><!-- /.about__inner -->
+
+    </div><!-- /.container -->
+</section>
+
+
+<div class="reviews">
+    <div class="container">
+
+        <div class="reviews__item">
+            <div class="reviews__text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat est consequat eu. Quisque aliquet a ipsum nec tincidunt. Nulla vitae rhoncus leo. Praesent dui sapien, bibendum quis tempus dictum.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dignissimos, cupiditate asperiores praesentium incidunt laborum quae non velit recusandae iure.</p>
+            </div>
+            
+            <div class="reviews__author">
+                <img class="revies__photo" src="https://via.placeholder.com/103/333" alt="">
+                <div class="reviews__name">Edward M. Brooks</div>
+                <div class="reviews__company">Marketing House</div>
+                <div class="reviews__rating">
+                    <img class="reviesw__star" src="img/icons/star.svg" alt="">
+                    <img class="reviesw__star" src="img/icons/star.svg" alt="">
+                    <img class="reviesw__star" src="img/icons/star.svg" alt="">
+                    <img class="reviesw__star" src="img/icons/star.svg" alt="">
+                    <img class="reviesw__star reviesw__star--unactive" src="img/icons/star.svg" alt="">
+                </div>
+            </div>
+
+        </div><!-- /.reviews__item -->
+    </div><!-- /.container -->
+</div><!-- /.reviews -->
+
+
+
+<!-- News -->
+
+
+<section class="news" id="news">
+    <div class="container">
+
+        <div class="news__header">
+            <h3 class="news__title">READ ME</h3>
+            <div class="news__text">Sometimes i write something smart</div>
+        </div>
+
+        <div class="articles">
+            
+            <div class="articles__col">
+
+                <div class="articles__item">
+                    <div class="articles__header">
+                        <time class="articles__date">10<br>june</time>
+                        <a href="#"><img class="articles__photo img" src="https://via.placeholder.com/370x257" alt=""></a>
+                    </div>
+                    <div class="articles__content">
+                        <h4 class="articles__title"><a href="#">TEN THE BEST APP IN 2017</a></h4>
+                        <div class="articles__cat">CATEGORY</div>
+                        <div class="articles__text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn--sm">READ MORE</a>
+                </div><!-- /.articles__item -->
+
+            </div><!-- /.articles__col -->
+            
+            <div class="articles__col">
+
+                <div class="articles__item">
+                    <div class="articles__header">
+                        <time class="articles__date">15<br>june</time>
+                        <a href="#"><img class="articles__photo img" src="https://via.placeholder.com/370x257" alt=""></a>
+                    </div>
+                    <div class="articles__content">
+                        <h4 class="articles__title"><a href="#">WEBSITE INSPIRATION</a></h4>
+                        <div class="articles__cat">CATEGORY</div>
+                        <div class="articles__text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn--sm">READ MORE</a>
+                </div><!-- /.articles__item -->
+
+            </div><!-- /.articles__col -->
+            
+            <div class="articles__col">
+
+                <div class="articles__item">
+                    <div class="articles__header">
+                        <time class="articles__date">20<br>june</time>
+                        <a href="#"><img class="articles__photo img" src="https://via.placeholder.com/370x257" alt=""></a>
+                    </div>
+                    <div class="articles__content">
+                        <h4 class="articles__title"><a href="#">CHANGES IN SOCIAL media</a></h4>
+                        <div class="articles__cat">CATEGORY</div>
+                        <div class="articles__text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn--sm">READ MORE</a>
+                </div><!-- /.articles__item -->
+
+            </div><!-- /.articles__col -->
+
+        </div><!-- /.articles -->
+
+        <div class="news__footer">
+            <a class="news__link" href="#">See more posts</a>
+        </div>
+    </div><!-- /.container -->
+</section>
+
+
+<!-- Footer -->
+
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer__inner">
+
+            <div class="footer__credits">
+                <div class="footer__copyright">
+                    &copy; 2018 UI42 - Free Templates
+                </div>
+                <div class="footer__social">
+
+                    <a class="footer__social-link" href="#" target="_blank">
+                        <svg class="footer__social-ico" width="24">
+                            <use xlink:href="#behance"></use>
+                        </svg>
+                    </a>
+
+                    <a  class="footer__social-link" href="#" target="_blank">
+                        <svg class="footer__social-ico" width="20">
+                            <use xlink:href="#dribble"></use>
+                        </svg>
+                    </a>
+
+                    <a  class="footer__social-link" href="#" target="_blank">
+                        <svg class="footer__social-ico" width="19">
+                            <use xlink:href="#linkedin"></use>
+                        </svg>
+                    </a>
+
+                    <a  class="footer__social-link" href="#" target="_blank">
+                        <svg class="footer__social-ico" width="16">
+                            <use xlink:href="#facebook" ></use>
+                        </svg>
+                    </a>
+
+                    <a  class="footer__social-link" href="#" target="_blank">
+                        <svg class="footer__social-ico" width="20">
+                            <use xlink:href="#instagram"></use>
+                        </svg>
+                    </a>
+
+                    <a  class="footer__social-link" href="#" target="_blank">
+                        <svg class="footer__social-ico" width="20">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                    </a>
+
+                </div><!-- /.footer__social -->
+            </div><!-- /.footer__credits -->
+
+            <nav class="footer__nav">
+                    <a class="footer__nav-link" href="#" data-scroll="#works">Work</a>
+                    <a class="footer__nav-link" href="#" data-scroll="#about">About me</a>
+                    <a class="footer__nav-link" href="#" data-scroll="#news">Blog</a>
+                    <a class="footer__nav-link" href="#" data-scroll="#intro">Contact</a>
+                <a href="#" class="footer__nav-link footer__nav-link--btn"  data-modal="#modal_hire_me">Hire Me</a>
+            </nav>
+
+        </div><!-- /.footer__inner -->
+
+    </div>
+</footer>
+
+<!-- Modals -->
+
+<div class="modal" id="modal_project">
+    <div class="modal__dialog">
+
+        <button class="modal__close" type="button" data-close>
+            <svg>
+                <use xlink:href="#modal-close"></use>
+            </svg>
+        </button>
+
+        <div class="modal-work">
+
+            <div class="modal-work__preview">
+                <!-- Slider -->
+                <div data-slider="slick">
+                    <div>
+                        <img class="modal-work__photo" src="https://via.placeholder.com/790x780/eee" alt="">
+                    </div>
+                    <div>
+                        <img class="modal-work__photo" src="https://via.placeholder.com/790x780/222" alt="">
+                    </div>
+                    <div>
+                        <img class="modal-work__photo" src="https://via.placeholder.com/790x780/fff" alt="">
+                    </div>
+                    <div>
+                        <img class="modal-work__photo" src="https://via.placeholder.com/790x780/000" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-work__content">
+
+                <div class="modal-work__header">
+                    <h3 class="modal-work__title">Project title</h3>
+                    <div class="modal-work__info">
+                        Category <span class="modal-work__info-devider">|</span> 2022
+                    </div>
+                </div>
+
+                <div class="modal-work__client">
+                    <div class="modal-work__client-title">Client:</div>
+                    <div class="modal-work__client-company">Cretive Agency</div>
+                </div>
+
+                <div class="modal-work__text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corporis dolorem saepe dignissimos aliquid eveniet ut dolore pariatur voluptas quibusdam. Sequi cum quae eum ipsam asperiores veniam doloribus cupiditate eius.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae corporis dolorem saepe dignissimos aliquid eveniet ut dolore pariatur voluptas quibusdam. Sequi cum quae eum ipsam asperiores veniam doloribus cupiditate eius.</p>
+                </div>
+
+                <div class="modal-work__footer">
+                    <button class="modal-work__btn slickPrev" type="button">
+                        <img src="img/icons/left.svg" height="11" alt="">
+                        Previous
+                    </button>
+                    <button class="modal-work__btn slickNext" type="button">
+                        Next
+                        <img src="img/icons/right.svg" height="11" alt="">
+                    </button>
+                </div>
+
+            </div><!-- /.modal-work__content -->
+
+        </div><!-- /.modal-work -->
+
+    </div><!-- /.modal__dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal" id="modal_resume">
+    <div class="modal__dialog">
+
+        <button class="modal__close" type="button" data-close>
+            <svg>
+                <use xlink:href="#modal-close"></use>
+            </svg>
+        </button>
+
+        <div class="modal__content">
+
+            <h3 class="modal__title text-center">Resume</h3>
+
+            <div class="text-center">
+                <a class="btn btn--thin" href="#">Download PDF</a>
+                <a class="btn btn--thin" href="#">Print</a>
+            </div>
+
+
+            <div class="timeline">
+                <div class="timeline__col timeline__col--left">
+                    <h4 class="timeline__title">Experience</h4>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" time="08-25-2022">2017 - <b>Present</b></time>
+                        <h5 class="timeline__subtitle">Freelancer</h5>
+                        <div class="timeline__position">Art Director</div>
+                        <div class="timeline__text">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt itaque amet commodi tempora excepturi ab, corrupti fugit! Aliquid, numquam dicta.</p>
+                        </div>
+                    </div><!-- /.timeline__item -->
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" time="08-25-2022">2015 - 2017</time>
+                        <h5 class="timeline__subtitle">Freelancer</h5>
+                        <div class="timeline__position">Art Director</div>
+                        <div class="timeline__text">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt itaque amet commodi tempora excepturi ab, corrupti fugit! Aliquid, numquam dicta.</p>
+                        </div>
+                    </div><!-- /.timeline__item -->
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" time="08-25-2022">2010 - 2015</time>
+                        <h5 class="timeline__subtitle">Freelancer</h5>
+                        <div class="timeline__position">Art Director</div>
+                        <div class="timeline__text">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt itaque amet commodi tempora excepturi ab, corrupti fugit! Aliquid, numquam dicta.</p>
+                        </div>
+                    </div><!-- /.timeline__item -->
+
+                </div><!-- /.timeline__col -->
+
+                <div class="timeline__col timeline__col--right">
+                    <h4 class="timeline__title">Education</h4>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" time="08-25-2022">2005 - 2010</time>
+                        <h5 class="timeline__subtitle">UX/UI Design</h5>
+                        <div class="timeline__position">LA University, USA</div>
+                    </div><!-- /.timeline__item -->
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" time="08-25-2022">2002 - 2005</time>
+                        <h5 class="timeline__subtitle">UX/UI Design</h5>
+                        <div class="timeline__position">LA University, USA</div>
+                    </div><!-- /.timeline__item -->
+
+                    <h4 class="timeline__title">Skills</h4>
+
+                    <div class="progress-bar">
+
+                        <div class="progress-bar__item">
+                            <div class="progress-bar__left">
+                                <div class="progress-bar__title">
+                                    UX/UI Design
+                                </div>
+                            </div>
+                            <div class="progress-bar__right">
+                                <div class="progress-bar__bar">
+                                    <div class="progress-bar__progress" style="width: 90%">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.progress-bar__item -->
+                        
+                        <div class="progress-bar__item">
+                            <div class="progress-bar__left">
+                                <div class="progress-bar__title">
+                                    Soft Skills
+                                </div>
+                            </div>
+                            <div class="progress-bar__right">
+                                <div class="progress-bar__bar">
+                                    <div class="progress-bar__progress" style="width: 40%">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.progress-bar__item -->
+                        
+                        <div class="progress-bar__item">
+                            <div class="progress-bar__left">
+                                <div class="progress-bar__title">
+                                    Brain
+                                </div>
+                            </div>
+                            <div class="progress-bar__right">
+                                <div class="progress-bar__bar">
+                                    <div class="progress-bar__progress" style="width: 124%">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.progress-bar__item -->
+                        
+                        <div class="progress-bar__item">
+                            <div class="progress-bar__left">
+                                <div class="progress-bar__title">
+                                    Somthing else
+                                </div>
+                            </div>
+                            <div class="progress-bar__right">
+                                <div class="progress-bar__bar">
+                                    <div class="progress-bar__progress" style="width: 10%">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.progress-bar__item -->
+
+                    </div><!-- /.progress-bar -->
+
+                    
+                    <h4 class="timeline__title">Awards</h4>
+
+                    <div class="timeline__item">
+                        <time class="timeline__date" time="08-25-2022">2010</time>
+                        <h5 class="timeline__subtitle">UX/UI Design</h5>
+                        <div class="timeline__position">LA University, USA</div>
+                        <div class="timeline__text">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt itaque amet commodi tempora excepturi ab, corrupti fugit! Aliquid, numquam dicta.</p>
+                        </div> 
+                    </div><!-- /.timeline__item -->
+
+                </div><!-- /.timeline__col -->
+            </div><!-- /.timeline -->
+
+            <div class="text-center">
+                <a href="#" class="btn"  data-modal="#modal_hire_me">Hire me</a>
+            </div>
+
+        </div><!-- /.modal__content -->
+
+    </div><!-- /.modal__dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal" id="modal_hire_me">
+    <div class="modal__dialog modal__dialog--sm">
+
+        <button class="modal__close" type="button" data-close>
+            <svg>
+                <use xlink:href="#modal-close"></use>
+            </svg>
+        </button>
+
+            <div class="contact">
+                <div class="contact__left">
+                    <h3 class="modal__title mb-0">Let's Talk!</h3>
+                    <h4 class="modal__subtitle">Call me or send me a request</h4>
+                    <ul class="contact__info">
+                        <li class="contact__info-item">
+                            <img class="contact__info-icon" src="img/icons/phone.svg" alt="">
+                            8(999) 999 99 99
+                        </li>
+                        <li class="contact__info-item">
+                            <img class="contact__info-icon" src="img/icons/mail.svg" alt="">
+                            sobake@drug.woof
+                        </li>
+                    </ul>
+
+                    <form class="form" action="/" method="post">
+                        <div class="form__group">
+                            <label class="form__label" for="input-email">Adress email</label>
+                            <input class="form__input"  name="input-email" type="text" id="input-email" placeholder="Adress email">
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label" for="input-text">Request</label>
+                            <textarea class="form__textarea" name="input-text" type="text" id="input-text" placeholder="Type your request"></textarea>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn" type="submit">Send</button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="contact__right">
+
+                </div>
+            </div><!-- /.contact -->
+
+
+    </div><!-- /.modal__dialog -->
+</div><!-- /.modal -->
+
+<!-- JS -->
+
+<script src="js/app.js"></script>
+<script src="js/slick/slick.min.js"></script>
+
+
+</body>
+</html>
